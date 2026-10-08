@@ -2,7 +2,7 @@
 
 # STP Lab — Theory + Steps 🦈
 
-## The problem STP solves
+## The problem STP solves & Vulnerability
 
 Switches forward **broadcasts** out every port except the one they came in on. If there's a **physical loop** in the topology, a broadcast will:
 
@@ -12,7 +12,7 @@ Switches forward **broadcasts** out every port except the one they came in on. I
 4. A floods it back to B
 5. **Forever.**
 
-![alt text](topo_router-loop.png)
+![alt text](topo-router-loop.png)
 
 This is a **broadcast storm**. Network dies in seconds. But you _need_ redundant links, or one cable cut kills everything.
 
@@ -34,7 +34,7 @@ Result: one path to root per switch. No loops. Redundant links blocked but ready
 
 ## Key terms
 
-![alt text](table_keywords-stp.png)
+![alt text](table-keywords-stp.png)
 
 ---
 
@@ -142,7 +142,7 @@ interface fa0/5
 
 Real problems hit during this lab, and how they were resolved. PT-specific quirks included — because those are half the battle.
 
-![alt text](table_solutions-stp.png)
+![alt text](table-solutions-stp.png)
 
 ## The pattern behind these errors
 

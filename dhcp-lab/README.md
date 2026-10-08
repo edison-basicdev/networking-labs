@@ -2,6 +2,21 @@
 
 # DHCP Lab — Theory + Steps 🦈
 
+## The vulnerability
+
+**DHCP has no authentication.** Anyone on the network can answer a DHCP request. The client trusts whoever replies **first**.
+
+That means an attacker can:
+
+1. Plug in a device running a DHCP server
+2. Reply **faster** than the real server (attackers do this on purpose)
+3. Hand out IPs that point the **gateway to themselves**
+4. Now all the victim's internet traffic flows through the attacker
+
+**This is called a rogue DHCP server attack.** The client doesn't know anything is wrong. The network looks fine. The attacker is in the middle of everything.
+
+---
+
 ## The problem DHCP solves
 
 Every device on a network needs:
@@ -25,30 +40,15 @@ You _could_ configure all of this manually on every device. But:
 
 Every DHCP lease follows the same four messages:
 
-![alt text](dhcp_dora-seq.png)
+![alt text](dhcp-dora-seq.png)
 
 **Memorize DORA.** You'll see it in every interview and every packet capture.
 
 ---
 
-## The vulnerability
-
-**DHCP has no authentication.** Anyone on the network can answer a DHCP request. The client trusts whoever replies **first**.
-
-That means an attacker can:
-
-1. Plug in a device running a DHCP server
-2. Reply **faster** than the real server (attackers do this on purpose)
-3. Hand out IPs that point the **gateway to themselves**
-4. Now all the victim's internet traffic flows through the attacker
-
-**This is called a rogue DHCP server attack.** The client doesn't know anything is wrong. The network looks fine. The attacker is in the middle of everything.
-
----
-
 ## Key terms
 
-![alt text](table_keywords-dhcp.png)
+![alt text](table-keywords-dhcp.png)
 
 ---
 
@@ -231,15 +231,15 @@ Simulation mode (bottom-right toggle) shows packets hop-by-hop.
 
 Real problems hit during this lab, and how they were resolved. PT-specific quirks included — because those are half the battle.
 
-![alt text](table_solutions-stp-1.png)
+![alt text](table-solutions-dhcp-1.png)
 
-![alt text](table_solutions-stp-2.png)
+![alt text](table-solutions-dhcp-2.png)
 
-![alt text](table_solutions-stp-3.png)
+![alt text](table-solutions-dhcp-3.png)
 
 ## The pattern behind these errors
 
-Same as STP — three categories:
+Same as DHCP — three categories:
 
 **1. Correct behavior mistaken for a fault (#2, #7, #11)**
 
