@@ -6,6 +6,7 @@ Labs, notes, and observations from learning networking from the packet level up.
 
 - `stp-lab/` — Spanning Tree Protocol: root election, failover, BPDU Guard
 - `dhcp-lab/` — DHCP: baseline, rogue server attack, DHCP snooping
+- `arp-lab/` — Dynamic ARP Inspection: observation, unable to demo
 
 ## Why
 
